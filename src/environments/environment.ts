@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  base: 'https://tf-arqui.onrender.com',
+  base: 'https://trabajoarquiweb-latest.onrender.com',
 };
