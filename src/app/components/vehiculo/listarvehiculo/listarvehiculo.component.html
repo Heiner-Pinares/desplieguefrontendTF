@@ -1,0 +1,82 @@
+<div class="container">
+  <!-- Título -->
+  <h2>Lista de Vehículos</h2>
+
+  <!-- Contenedor de acciones -->
+  <div class="actions-container">
+    <!-- Botón Insertar -->
+    <div class="left-action">
+      <button
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/vehiculo/insertareditarvehiculo']"
+      >
+        ➕ Insertar Vehículo
+      </button>
+    </div>
+
+    <!-- Filtro por placa -->
+    <div class="right-action">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Filtrar vehículo por placa</mat-label>
+        <input
+          matInput
+          [(ngModel)]="filtro"
+          (input)="aplicarfiltro()"
+          placeholder="Ej: ABC-123"
+        />
+        <button mat-icon-button matSuffix disableRipple>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <!-- Tarjetas de vehículos -->
+  <div class="card-container">
+    <mat-card class="vehiculo-card" *ngFor="let vehiculo of vehiculosPaginados">
+      <mat-card-title>{{ vehiculo.placa }}</mat-card-title>
+      <img
+        mat-card-image
+        src="assets/vehiculo.jpg"
+        alt="Vehículo"
+        style="
+          max-width: 150px;
+          height: auto;
+          margin: 0 auto 1rem;
+          display: block;
+        "
+      />
+
+      <mat-card-content>
+        <p><strong>Color:</strong> {{ vehiculo.color }}</p>
+        <p><strong>Marca:</strong> {{ vehiculo.marca }}</p>
+        <p><strong>Modelo:</strong> {{ vehiculo.modelo }}</p>
+        <p><strong>Usuario:</strong> {{ vehiculo.usuario.username }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button
+          mat-icon-button
+          color="accent"
+          [routerLink]="['/vehiculo/insertareditarvehiculo', vehiculo.placa]"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="eliminar(vehiculo.placa)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Paginador -->
+  <mat-paginator
+    [length]="totalItems"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[4, 8, 16, 24]"
+    showFirstLastButtons
+    (page)="cambiarPagina($event)"
+  >
+  </mat-paginator>
+</div>

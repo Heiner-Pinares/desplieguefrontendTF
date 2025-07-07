@@ -1,0 +1,86 @@
+.main-login-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.login-container {
+  flex: 1;
+  padding: 3rem;
+  background-color: #27193E; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 120px;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: white; 
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+form {
+  width: 100%;
+  max-width: 960px;
+}
+
+.custom-button {
+  margin-top: 2rem;
+  background-color: #5BC0E4 !important; 
+  color: white !important;
+  font-weight: bold;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.register-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.register-link a {
+  color: white; 
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-image {
+  flex: 1;
+  background-image: url('/assets/fondologin.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+
+@media (max-width: 992px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

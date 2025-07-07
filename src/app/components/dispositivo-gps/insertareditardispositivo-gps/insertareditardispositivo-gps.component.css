@@ -1,0 +1,73 @@
+/* Fondo total celeste claro */
+body,
+.container {
+  background-color: #5bc0e4;
+  padding: 60px 20px;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Akshar", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tarjeta blanca con el título y el formulario dentro */
+form {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Título dentro del cuadro */
+form h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #27193e;
+  margin-bottom: 2rem;
+  font-family: "Akshar", sans-serif;
+}
+
+/* Campos del formulario */
+mat-form-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+
+/* Contenedor de botones en fila */
+.botones-acciones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Botones Aceptar y Cancelar */
+
+button[type="submit"],
+.btn-cancelar {
+  background-color: #27193E !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover para ambos botones */
+button[type="submit"]:hover,
+.btn-cancelar:hover {
+  background-color: #3d2b5c !important;
+}
+
+.mt-2 {
+  margin-top: 10px; 
+}
+

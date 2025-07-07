@@ -1,0 +1,86 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="aceptar()" style="margin: 2rem">
+    <h2 style="text-align: center; margin-top: 2rem">
+      {{ edicion ? "Editar Dispositivo_GPS" : "Registrar Dispositivo_GPS" }}
+    </h2>
+    <!-- Texto de la consulta -->
+    <mat-form-field class="example-full-width" *ngIf="edicion && !esCliente">
+      <mat-label>ID</mat-label>
+      <input matInput formControlName="codigo" />
+      <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+        El código es obligatorio!!
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Nro serie -->
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Número de serie*</mat-label>
+      <span matPrefix>GPS</span>
+      <input
+        matInput
+        formControlName="numeroSerie"
+        maxlength="3"
+        placeholder="001"
+      />
+      <mat-error *ngIf="form.get('numeroSerie')?.hasError('required')">
+        Número de serie requerido
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Precio -->
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Precio</mat-label>
+      <input
+        matInput
+        placeholder="Precio del dispositivo"
+        formControlName="precio"
+      />
+      <mat-error *ngIf="form.get('precio')?.hasError('required')">
+        El precio es obligatorio!!
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Fecha -->
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Fecha de adquisicion</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="fechaAdquisicion"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="form.get('fechaAdquisicion')?.hasError('required')">
+        La fecha es obligatoria y no debe ser futura!!
+      </mat-error>
+    </mat-form-field>
+
+    <!-- ID del Vehiculo -->
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Placa del Vehículo</mat-label>
+      <mat-select formControlName="placav">
+        <mat-option *ngFor="let v of vehiculos" [value]="v.placa">
+          {{ v.placa }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="botones-acciones">
+      <button mat-raised-button type="submit" [disabled]="form.invalid">
+        Aceptar
+      </button>
+
+      <button
+        mat-raised-button
+        type="button"
+        (click)="cancelar()"
+        class="btn-cancelar"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

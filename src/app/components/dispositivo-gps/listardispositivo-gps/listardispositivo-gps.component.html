@@ -1,0 +1,47 @@
+<div class="container">
+  <h1 style="text-align: center; margin-top: 2rem">Lista de Dispositivos de GPS</h1>
+
+  <!-- Botón Insertar -->
+  <div style="text-align: left; margin: 1rem 0;">
+    <button mat-raised-button color="primary" [routerLink]="['/dispositivo-gps/insertareditardispositivo-gps']">
+      ➕ Insertar Dispositivo GPS
+    </button>
+  </div>
+
+<!-- Cards -->
+<div class="card-container">
+  <mat-card class="dispositivo-card" *ngFor="let gps of pagedData">
+    <h3 class="mat-card-title">
+      {{ gps.numeroSerie }} - {{ gps.id }}
+    </h3>
+
+    <img mat-card-image src="assets/dispositivoGPS.png" alt="Dispositivo GPS" />
+
+    <mat-card-content>
+      <p><strong>Precio:</strong> S/ {{ gps.precio }}</p>
+      <p><strong>Fecha de Adquisición:</strong> {{ gps.fechaAdquisicion | date: 'dd/MM/yyyy' }}</p>
+      <p><strong>Vehículo:</strong> {{ gps.vehiculo.placa || 'No asignado' }}</p>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-icon-button color="accent" [routerLink]="['/dispositivo-gps/insertareditardispositivo-gps', gps.id]">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="eliminar(gps.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+  <!-- Paginador funcional -->
+<mat-paginator
+  [length]="dataSource.filteredData.length"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 15, 20]"
+  (page)="onPageChange($event)"
+  showFirstLastButtons>
+</mat-paginator>
+
+</div>

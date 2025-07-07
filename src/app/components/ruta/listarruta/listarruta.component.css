@@ -1,0 +1,112 @@
+/* Fondo general */
+.container {
+  background-color: #5bc0e4;
+  padding: 60px 20px;
+  flex-direction: column;
+  min-height: 100vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título estilizado */
+h2 {
+  background-color: #472F64;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones superiores */
+.botones-superiores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.izquierda {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.derecha {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+/* Botón Insertar */
+button[color='primary'] {
+  background-color: #27193E !important;
+  color: white !important;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button[color='primary']:hover {
+  background-color: #3a2d50 !important;
+}
+
+/* Botón Consultar con el mismo estilo que Insertar */
+button.boton-consultar {
+  background-color: #27193E !important;
+  color: white !important;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button.boton-consultar:hover {
+  background-color: #3a2d50 !important;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Encabezado de tabla */
+.mat-header-cell {
+  background-color: white;
+  color: #27193E;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Celdas de tabla */
+.mat-cell {
+  text-align: center;
+  padding: 12px;
+  color: #333;
+}
+
+/* Filas alternas */
+.mat-row:nth-child(even) {
+  background-color: #f2f8fc;
+}
+
+/* Íconos de editar y eliminar con mismo color */
+button[mat-icon-button] mat-icon {
+  color: #27193E !important;
+}
+
+/* Paginador */
+mat-paginator {
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+/* Ícono de Ver Ruta  */
+button[mat-icon-button] mat-icon.visibility-icon {
+  color: #ffffff !important; 
+}

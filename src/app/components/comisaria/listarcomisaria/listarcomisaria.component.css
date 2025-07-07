@@ -1,0 +1,131 @@
+.container {
+  background-color: #5bc0e4;
+  padding: 60px 20px;
+  flex-direction: column;
+  min-height: 100vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título estilizado */
+h2 {
+  background-color: #472F64;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Acciones superiores */
+.acciones-superiores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* Botón insertar a la izquierda */
+.insertar-comisaria {
+  flex: 1;
+}
+
+/* Agrupa búsqueda y botones a la derecha */
+.grupo-busqueda {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Campo de búsqueda más compacto */
+.campo-busqueda {
+  width: 220px;
+  min-width: 200px;
+}
+
+/* Botones Buscar y Ver Todas*/
+.btn-buscar,
+.btn-ver,
+button[color='primary'] {
+  background-color: #27193E !important;
+  color: white !important;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-buscar:hover,
+.btn-ver:hover,
+button[color='primary']:hover {
+  background-color: #3a2d50 !important;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Encabezado de tabla */
+.mat-header-cell {
+  background-color: white;
+  color: #27193E;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Celdas */
+.mat-cell {
+  text-align: center;
+  padding: 12px;
+  color: #333;
+}
+
+/* Filas alternas */
+.mat-row:nth-child(even) {
+  background-color: #f2f8fc;
+}
+
+/* Íconos de editar y eliminar */
+button[mat-icon-button] mat-icon {
+  color: #27193E !important;
+}
+
+/* Paginador */
+mat-paginator {
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+/* Responsive básico */
+@media (max-width: 768px) {
+  .acciones-superiores {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .grupo-busqueda {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .campo-busqueda {
+    width: 100%;
+  }
+
+  .btn-buscar,
+  .btn-ver {
+    width: 100%;
+  }
+}
+
+
+

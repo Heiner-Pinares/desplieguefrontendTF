@@ -1,0 +1,26 @@
+<div class="perfil-container">
+  <mat-card class="perfil-card">
+    <mat-card-header>
+      <div mat-card-avatar class="perfil-avatar">
+        <mat-icon>person</mat-icon>
+      </div>
+      <mat-card-title>{{ form.get('nombres')?.value }} {{ form.get('apellidos')?.value }}</mat-card-title>
+      <mat-card-subtitle>DNI: {{ form.get('dni')?.value }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="perfil-info">
+        <p><mat-icon>place</mat-icon> <strong>Dirección:</strong> {{ form.get('direccion')?.value }}</p>
+        <p><mat-icon>email</mat-icon> <strong>Correo:</strong> {{ form.get('correo_electronico')?.value }}</p>
+        <p><mat-icon>calendar_today</mat-icon> <strong>Fecha de nacimiento:</strong> {{ form.get('fechaNacimiento')?.value }}</p>
+        <p><mat-icon>cake</mat-icon> <strong>Edad:</strong> {{ form.get('edad')?.value }}</p>
+        <p><mat-icon>phone</mat-icon> <strong>Teléfono:</strong> {{ form.get('telefono')?.value }}</p>
+        <p><mat-icon>person</mat-icon> <strong>Usuario:</strong> {{ form.get('username')?.value }}</p>
+        <p>
+          <mat-icon>{{ form.get('enabled')?.value === 'Sí' ? 'check_circle' : 'cancel' }}</mat-icon>
+          <strong>Activo:</strong> {{ form.get('enabled')?.value }}
+        </p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
